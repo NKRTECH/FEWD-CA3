@@ -89,6 +89,9 @@ function getData(){
         getexplore.addEventListener('click',()=>{
                 category.innerHTML = ''
                 for(i = 0; i < res.data.categories.length; i++){
+                    if(res.data.meals[0][geting] === '' || res.data.meals[0][geting] === null){
+                        break;
+                    }
                     category.innerHTML += `
                     <div style='display: flex; flex-direction: column; align-items: center; justify-content: center; border: 3px solid black; border-radius: 10px; background-color: rgba(255, 255, 255, 0.4); max-width: fit-content'; padding: 10px>
                     <img style='border-radius: 10px' src="${res.data.categories[i]['strCategoryThumb']}">
